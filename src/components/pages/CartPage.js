@@ -7,7 +7,7 @@ const CartPage = () => {
 
   return (
     <div>
-      <h2>CartPage</h2>
+      <h2>Cart</h2>
       <div>
         <ul>
           {cart.map((item) => (

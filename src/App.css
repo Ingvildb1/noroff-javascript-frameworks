@@ -109,21 +109,6 @@ li a {
   cursor: pointer;
 }
 
-/* .search button {
-  padding: 20px 40px;
-  border-radius: 0.5rem;
-  margin-left: 15px;
-  color: #a1a1a1;
-  font-family: var(--font-raleway);
-  font-weight: 900;
-  letter-spacing: 0.75px;
-  font-size: 1.25rem;
-  cursor: pointer;
-  background: #1f2123;
-  -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-  box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-} */
-
 .empty {
   width: 100%;
   margin-top: 3rem;
@@ -143,8 +128,8 @@ li a {
   width: 100%;
   margin-top: 3rem;
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
-  justify-content: space-between; /* Distribute items evenly along the row */
+  flex-wrap: wrap;
+  justify-content: space-between; 
 }
 
 
@@ -159,7 +144,7 @@ li a {
   border: none;
 
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
-  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.021);
 }
 
 .item div:nth-of-type(1) {
@@ -172,7 +157,7 @@ li a {
 }
 
 .item:hover {
-  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.037);
   transform: scale(1.05, 1.05);
 }
 
@@ -188,7 +173,7 @@ li a {
 
 .item div:nth-of-type(3) {
   z-index: 2;
-  background-color: #343739;
+  background-color: #3437397b;
   padding: 16px 24px 24px 24px;
 
   position: absolute;
@@ -200,16 +185,18 @@ li a {
 .item div:nth-of-type(3) span {
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
-  font-size: 13px;
+  font-size: 10px;
   letter-spacing: 2px;
   font-weight: 500;
   color: #f0f0f0;
 }
 
 .item div:nth-of-type(3) h3 {
-  margin-top: 5px;
+  margin-top: 9px;
+  margin-bottom: 9px;
   font-family: "Roboto Slab", serif;
   color: #f9d3b4;
+  font-size: 12px;
 }
 
 .item:hover div:nth-of-type(2) {
@@ -235,8 +222,9 @@ h4 {
   color: #f0f0f0;
 }
 
+
+
 /* Contact us Form*/
-/* CSS for Elegant and Modern Contact Form */
 form {
   max-width: 400px;
   margin: 0 auto;
