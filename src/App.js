@@ -18,7 +18,7 @@ function App() {
     <div className='App'>
       <CartContext.Provider value={value}>
         <BrowserRouter>
-          <h1>My Store</h1>
+          <h1>Online Shop</h1>
           <Nav />
           <Switch>
             

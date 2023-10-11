@@ -84,9 +84,9 @@ li a {
   justify-content: center;
   padding: 1.5rem 1.75rem;
   border-radius: 3rem;
-  background: #1f2123;
-  -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-  box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+  background: #6466697b;
+  -webkit-box-shadow: 5px 5px 7px #1c1d1f97, -5px -5px 7px #22252772;
+  box-shadow: 5px 5px 7px #1c1d1f70, -5px -5px 7px #22252771;
 }
 
 
@@ -100,7 +100,7 @@ li a {
 
   outline: none;
   color: #a1a1a1;
-  background: #1f2123;
+  background: #7d8082;
 }
 
 .search img {
@@ -237,7 +237,7 @@ form {
 h2 {
   text-align: center;
   font-size: 28px;
-  color: #d4d0d0;
+  color: #aeaeae;
   margin-bottom: 20px;
 }
 
@@ -284,12 +284,17 @@ button:hover {
 /* SingleProduct*/
 .singleProduct {
   max-width: 800px;
+  height: auto;
   margin: 0 auto;
   padding: 20px;
   background-color: #faebe0;
   border-radius: 10px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
   
+}
+
+.singleProduct h2 {
+  color: #1c1d1f;
 }
 
 .singleProduct p {

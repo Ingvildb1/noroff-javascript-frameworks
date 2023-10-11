@@ -47,7 +47,9 @@ function Contact() {
 
   return (
     <div>
+        
       <form onSubmit={onFormSubmit}>
+      <h1>Contact Us</h1>
         <label htmlFor="first-name">First name</label>
         <input
           name="first-name"
