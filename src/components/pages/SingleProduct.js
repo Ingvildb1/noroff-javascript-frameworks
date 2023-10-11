@@ -18,12 +18,12 @@ const SingleProduct = () => {
     }, [params.id]) // Include params.id in the dependency array to fetch data when the ID changes
 
     if (product === null) return <h1>Loading...</h1>
-   
+
     return (
         <div className="singleProduct">
-            <h2>Single Product page</h2>
-            <h3 className="title">Title: {product.title}</h3>
-            <img src={product.imageUrl} alt={product.title} /> {/* Display the image */}
+            <h2>SHOP</h2>
+            <h3 className="title">{product.title}</h3>
+            <img src={product.imageUrl} alt={product.title} />
             <h4>Before: {product.price},-</h4>
             <h3>Now: {product.discountedPrice},-</h3>
             <p>{product.description}</p>
@@ -31,9 +31,25 @@ const SingleProduct = () => {
                 console.log("Add to cart clicked");
                 setCart(prevCart => ([...prevCart, product]))
             }}>Add to cart</button>
-            
+
+            <h3>Reviews:</h3>
+            {product.reviews.length === 0 ? (
+                <p>No reviews yet</p>
+            ) : (
+                <ul>
+                    {product.reviews.map((review) => (
+                        <li key={review.id}>
+                            <p>Username: {review.username}</p>
+                            <p>Rating: {review.rating}</p>
+                            <p>Description: {review.description}</p>
+                        </li>
+                    ))}
+                </ul>
+            )}
         </div>
     )
 }
 
 export default SingleProduct;
+
+
