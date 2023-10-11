@@ -109,6 +109,17 @@ li a {
   cursor: pointer;
 }
 
+.cart-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-icon img { 
+    color: #a7988c;
+    width: 30px;
+    height: 30px;
+  }
+
 .empty {
   width: 100%;
   margin-top: 3rem;
