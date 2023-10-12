@@ -13,7 +13,16 @@ export const CartContext = createContext([])
 
 function App() {
   const [cart, setCart] = useState([]);
-  const value = { cart, setCart }; // Create an object with keys cart and setCart
+    // Function to remove an item from the cart
+  const removeFromCart = (itemId) => {
+  const updatedCart = cart.filter((item) => item.id !== itemId);
+      setCart(updatedCart);
+    };
+  
+
+  const value = { cart, setCart, removeFromCart }; 
+
+
   return (
     <div className='App'>
       <CartContext.Provider value={value}>
