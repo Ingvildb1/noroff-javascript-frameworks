@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from 'react-router-dom'
 import { CartContext } from "../../App";
+import './../../App.css';
 
 const url ='https://api.noroff.dev/api/v1/online-shop';
 
@@ -15,18 +16,22 @@ const SingleProduct = () => {
             .then(json => {
                 setProduct(json)
             })
-    }, [params.id]) // Include params.id in the dependency array to fetch data when the ID changes
+    }, [params.id])
 
     if (product === null) return <h1>Loading...</h1>
+
+    // Calculate the discount amount
+    const discountAmount = product.price - product.discountedPrice;
 
     return (
         <div className="singleProduct">
             <h2>SHOP</h2>
             <h3 className="title">{product.title}</h3>
             <img src={product.imageUrl} alt={product.title} />
-            <h4>Before: {product.price},-</h4>
-            <h3>Now: {product.discountedPrice},-</h3>
-            <p>{product.description}</p>
+            <p className="description">{product.description}</p>
+            <h4>Before: ${product.price},-</h4>
+            <h3>Now: ${product.discountedPrice},-</h3>
+            {discountAmount > 0 && <p className="discountBadge">Discount: ${discountAmount.toFixed(2)}!</p>}
             <button onClick={() => {
                 console.log("Add to cart clicked");
                 setCart(prevCart => ([...prevCart, product]))
@@ -36,11 +41,11 @@ const SingleProduct = () => {
             {product.reviews.length === 0 ? (
                 <p>No reviews yet</p>
             ) : (
-                <ul>
+                <ul className="reviews">
                     {product.reviews.map((review) => (
-                        <li key={review.id}>
+                        <li key={review.id} className="review-item">
                             <p>Username: {review.username}</p>
-                            <p>Rating: {review.rating}</p>
+                            <p className="review-rating">Rating: {review.rating}</p>
                             <p>Description: {review.description}</p>
                         </li>
                     ))}
@@ -51,5 +56,6 @@ const SingleProduct = () => {
 }
 
 export default SingleProduct;
+
 
 
