@@ -6,50 +6,88 @@ function Contact() {
   const [lastName, setLastName] = useState('');
   const [subject, setSubject] = useState('');
   const [email, setEmail] = useState('');
-  const [message, setMessage] = useState(''); // State for the message textarea
+  const [message, setMessage] = useState('');
+  const [formErrors, setFormErrors] = useState({}); // State for form validation errors
+
+  function validateForm() {
+    const errors = {};
+
+    // Validate first name (Minimum 3 characters)
+    if (firstName.trim().length < 3) {
+      errors.firstName = 'Minimum 3 characters required for first name';
+    }
+
+    // Validate last name (Minimum 3 characters)
+    if (lastName.trim().length < 3) {
+      errors.lastName = 'Minimum 3 characters required for last name';
+    }
+
+    // Validate subject (Minimum 3 characters)
+    if (subject.trim().length < 3) {
+      errors.subject = 'Minimum 3 characters required for subject';
+    }
+
+    // Validate email (Must be a valid email address)
+    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    if (!emailRegex.test(email)) {
+      errors.email = 'Must be a valid email address';
+    }
+
+    // Validate message (Minimum 3 characters)
+    if (message.trim().length < 3) {
+      errors.message = 'Minimum 3 characters required for the message';
+    }
+
+    setFormErrors(errors);
+
+    // Return true if there are no errors, indicating the form is valid
+    return Object.keys(errors).length === 0;
+  }
 
   function onFormSubmit(event) {
     event.preventDefault();
-    const body = {
-      firstName,
-      lastName,
-      subject,
-      email,
-      message, // Include the message in the request body
-    };
 
-    fetch('http://www.example.com', {
-      method: 'POST',
-      body: JSON.stringify(body),
-    });
+    if (validateForm()) {
+      const body = {
+        firstName,
+        lastName,
+        subject,
+        email,
+        message,
+      };
+
+      // Send the request with the valid data
+      fetch('http://www.example.com', {
+        method: 'POST',
+        body: JSON.stringify(body),
+      });
+    }
   }
 
   function onTextInputChange(event) {
-    const value = event.target.value;
-    if (event.target.name === 'first-name') {
+    const { name, value } = event.target;
+    if (name === 'first-name') {
       setFirstName(value);
     }
-    if (event.target.name === 'last-name') {
+    if (name === 'last-name') {
       setLastName(value);
     }
-    if (event.target.name === 'subject') {
+    if (name === 'subject') {
       setSubject(value);
     }
-    if (event.target.name === 'email') {
-        setEmail(value);
+    if (name === 'email') {
+      setEmail(value);
     }
   }
 
-  // Function to handle changes in the message textarea
   function onMessageChange(event) {
     setMessage(event.target.value);
   }
 
   return (
     <div>
-        
       <form onSubmit={onFormSubmit}>
-      <h1>Contact Us</h1>
+        <h1>Contact Us</h1>
         <label htmlFor="first-name">First name</label>
         <input
           name="first-name"
@@ -57,6 +95,8 @@ function Contact() {
           placeholder="Your first name"
           onChange={onTextInputChange}
         />
+        {formErrors.firstName && <p className="error">{formErrors.firstName}</p>}
+
         <label htmlFor="last-name">Last name</label>
         <input
           name="last-name"
@@ -64,6 +104,8 @@ function Contact() {
           placeholder="Your last name"
           onChange={onTextInputChange}
         />
+        {formErrors.lastName && <p className="error">{formErrors.lastName}</p>}
+
         <label htmlFor="subject">Subject</label>
         <input
           name="subject"
@@ -71,13 +113,17 @@ function Contact() {
           placeholder="Your subject"
           onChange={onTextInputChange}
         />
-         <label htmlFor="email">Email</label>
+        {formErrors.subject && <p className="error">{formErrors.subject}</p>}
+
+        <label htmlFor="email">Email</label>
         <input
           name="email"
           value={email}
           placeholder="Your email"
           onChange={onTextInputChange}
         />
+        {formErrors.email && <p className="error">{formErrors.email}</p>}
+
         <label htmlFor="message">Message</label>
         <textarea
           name="message"
@@ -85,6 +131,8 @@ function Contact() {
           placeholder="Your message"
           onChange={onMessageChange}
         />
+        {formErrors.message && <p className="error">{formErrors.message}</p>}
+
         <button>Submit</button>
       </form>
     </div>
@@ -92,4 +140,5 @@ function Contact() {
 }
 
 export default Contact;
+
 
