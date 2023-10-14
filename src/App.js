@@ -6,6 +6,7 @@ import Home from './components/pages/Home';
 import SingleProduct from './components/pages/SingleProduct';
 import Contact from './components/pages/Contact';
 import { createContext, useState } from 'react';
+import CheckoutPage from './components/pages/CheckoutPage';
 
 const url = 'https://api.noroff.dev/api/v1/online-shop';
 
@@ -30,9 +31,11 @@ function App() {
           <h1>Online Shop</h1>
           <Nav />
           <Switch>
-            
             <Route path="/contact">
               <Contact />
+            </Route>
+            <Route path="/checkout">
+              <CheckoutPage /> 
             </Route>
             <Route path="/cart">
               <CartPage />

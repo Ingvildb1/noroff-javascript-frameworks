@@ -206,7 +206,7 @@ li a {
   margin-top: 9px;
   margin-bottom: 9px;
   font-family: "Roboto Slab", serif;
-  color: #f9d3b4;
+  color: #151515;
   font-size: 12px;
 }
 
@@ -225,12 +225,12 @@ li a {
 
 .beforePrice {
   text-decoration: line-through;
-  color: #f0f0f0;
+  color: #343434;
   font-size: 11px;
 }
 
 h4 {
-  color: #f0f0f0;
+  color: #000000;
 }
 
 
@@ -239,6 +239,7 @@ h4 {
 form {
   max-width: 400px;
   margin: 0 auto;
+  margin-bottom: 100px;
   padding: 30px;
   background-color: #f3b9ad;
   border-radius: 10px;
@@ -268,7 +269,7 @@ textarea {
   border-radius: 6px;
   background-color: #f9f9f9;
   font-size: 16px;
-  color: #fcfcfc;
+  color: #000000;
 }
 
 textarea {
@@ -301,6 +302,8 @@ button:hover {
   background-color: #faebe0;
   border-radius: 10px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+  padding-bottom: 100px;
+  margin-bottom: 100px;
   
 }
 
@@ -308,12 +311,14 @@ button:hover {
   color: #1c1d1f;
 }
 
-.singleProduct p {
+.description {
   font-size: 18px;
-  color: #555;
+  color: #1c1c1c;
+  margin-top: 20px;
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
+  margin-top: 40px;
 }
 
 .title {
@@ -338,6 +343,22 @@ button:hover {
   justify-content: center;
 }
 
+.discountBadge {
+  display: inline-block;
+  background-color: #ea7941; 
+  color: white; 
+  font-size: 14px; 
+  border-radius: 50%; 
+  width: 90px; 
+  height: 90px; 
+  text-align: center;
+  line-height: 32px; 
+  margin-left: 10px;
+  padding-top: 15px; 
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
 .singleProduct button {
   color: #000000;
   background-color: #f3b9ad;
@@ -350,13 +371,75 @@ button:hover {
   transition: background-color 0.3s ease;
 }
 
+.reviews {
+  list-style: none;
+  padding: 0;
+}
+
+.review-item {
+  border: 1px solid #ddd;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f4dbd3;
+}
+
+.review-item p {
+  margin: 0;
+}
+
+
+
 /* CartPage */
 
 .removebtn {
-  background-color: rgba(255, 255, 255, 0.342);
+  background-color: #f3b9ad;
   font-size: 9px;
+  display: flex;
+  justify-content: center;
+  color: #252525;
 }
 
+.total {
+  color: #3c3c3c;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.cart img {
+  width: 300px;  
+}
+
+.toCheckout {
+  color: #252525;
+  background-color: #f3b9ad;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 150px;
+}
+
+/* check out*/
+.checkoutLink {
+  color: #000000;
+  text-decoration: none;
+
+}
+
+.checkoutbtn {
+  margin-left: 25%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #252525;
+  background-color: #f3b9ad;
+}
+
+.homeLink {
+  color: #000;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 200px;
+}
 
 
 @media screen and (max-width: 600px) {

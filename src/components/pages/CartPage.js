@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "../../App";
 import { Product } from "./Home";
+import './../../App.css';
 
 const CartPage = () => {
   const { cart, removeFromCart } = useContext(CartContext);
@@ -12,7 +14,7 @@ const CartPage = () => {
     <div>
       <h2>Cart</h2>
       <div>
-        <ul>
+        <ul className="cart">
           {cart.map((item) => (
             <li key={item.id}>
               <Product item={item} />
@@ -22,7 +24,8 @@ const CartPage = () => {
         </ul>
       </div>
       <div>
-        <h4>Total Price: ${totalPrice.toFixed(2)}</h4>
+        <h4 className="total">Total Price: ${totalPrice.toFixed(2)}</h4>
+        <Link to="/checkout" className="toCheckout">Go to Checkout</Link> {/* Add a link to the CheckoutPage */}
       </div>
     </div>
   );
