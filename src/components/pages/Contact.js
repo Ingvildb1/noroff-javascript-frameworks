@@ -64,7 +64,7 @@ function Contact() {
       };
 
       // Send the request with the valid data
-      fetch('https://jolly-nasturtium-62c5db.netlify.app/contact', {
+      fetch('https://jolly-nasturtium-62c5db.netlify.app', {
         method: 'POST',
         body: JSON.stringify(body),
       });
