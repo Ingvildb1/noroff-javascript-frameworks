@@ -41,7 +41,7 @@ const Home = () => {
 
   return (
     <div>
-      <h2>Home</h2>
+      <h2>Products to shop</h2>
       <input className="search"
         value={searchText}
         onChange={(event) => {
