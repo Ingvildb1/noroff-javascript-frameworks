@@ -40,8 +40,15 @@ function Contact() {
 
     setFormErrors(errors);
 
-    // Return true if there are no errors, indicating the form is valid
-    return Object.keys(errors).length === 0;
+    // Check if there are no errors
+    const isValid = Object.keys(errors).length === 0;
+
+    // Log to the console when the form is validated
+    if (isValid) {
+      console.log('Form is validated.');
+    }
+
+    return isValid;
   }
 
   function onFormSubmit(event) {
@@ -57,7 +64,7 @@ function Contact() {
       };
 
       // Send the request with the valid data
-      fetch('http://www.example.com', {
+      fetch('http://localhost:3000/contact', {
         method: 'POST',
         body: JSON.stringify(body),
       });
