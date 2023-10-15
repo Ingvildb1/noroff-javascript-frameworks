@@ -8,6 +8,7 @@ import Contact from './components/pages/Contact';
 import { createContext, useState } from 'react';
 import CheckoutPage from './components/pages/CheckoutPage';
 
+// eslint-disable-next-line no-unused-vars
 const url = 'https://api.noroff.dev/api/v1/online-shop';
 
 export const CartContext = createContext([])
