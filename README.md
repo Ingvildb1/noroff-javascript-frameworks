@@ -1,5 +1,7 @@
 # JS Frameworks Delivery
 
+![image](public/js-frameworks-2-img.png)
+
 ## About this project
 This is my delivery for the JS Frameworks course at Noroff. The course is about learning the basics of React and how to use it to create a web application. 
 
